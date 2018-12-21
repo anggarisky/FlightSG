@@ -4,9 +4,17 @@ import {Button, Input, Item} from 'native-base';
 import styles from './styles';
 
 class Chatayflightselected extends Component {
+
+  navigateTo = data => {
+    this.props.navigation.navigate('Chatayflighthomes', {
+      data,
+    });
+  };
+
   render() {
     const {getParam} = this.props.navigation;
     const {arrival, departure} = getParam('data');
+    const homesArrival = arrival;
 
     return (
       <View>
@@ -42,13 +50,15 @@ class Chatayflightselected extends Component {
             }}>
             Cathay Pacific CX{arrival}/{departure}{' '}
           </Text>
+
           <Button
-            onPress={() => this.props.navigation.navigate('Chatayflighthomes')}
+            onPress={() => this.navigateTo(homesArrival)}
             block
             light
             style={styles.buttoncta}>
             <Text style={styles.textbuttoncta}>CX{arrival} ARRIVAL</Text>
           </Button>
+
           <Button block light style={styles.buttoncta}>
             <Text style={styles.textbuttoncta}>CX{departure} DEPARTURE</Text>
           </Button>

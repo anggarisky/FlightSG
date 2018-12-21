@@ -40,7 +40,7 @@ const stackConfig = {
 }
 
 const AppNavigator = createStackNavigator(stackConfig, {
-	initialRouteName: 'Login'
+	initialRouteName: 'Chatayflighthomes'
 })
 
 const AppContainer = createAppContainer(AppNavigator)
