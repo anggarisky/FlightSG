@@ -5,7 +5,11 @@ import styles from './styles';
 
 class Chatayflightselected extends Component {
   render() {
-    const {getParam} = this.props.navigation;
+    const {
+      getParam: {arrival, departure},
+    } = this.props.navigation;
+
+    console.log(getParam('data'));
 
     return (
       <View>
@@ -39,7 +43,7 @@ class Chatayflightselected extends Component {
               fontSize: 22,
               textAlign: 'center',
             }}>
-            Cathay Pacific CX{getParam.arrival}/{getParam.departure}{' '}
+            Cathay Pacific CX{arrival}/{departure}{' '}
           </Text>
           <Button
             onPress={() => this.props.navigation.navigate('Chatayflighthomes')}
@@ -51,9 +55,7 @@ class Chatayflightselected extends Component {
             </Text>
           </Button>
           <Button block light style={styles.buttoncta}>
-            <Text style={styles.textbuttoncta}>
-              CX{getParam.departure} DEPARTURE
-            </Text>
+            <Text style={styles.textbuttoncta}>CX{departure} DEPARTURE</Text>
           </Button>
         </View>
       </View>
