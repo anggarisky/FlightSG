@@ -5,11 +5,8 @@ import styles from './styles';
 
 class Chatayflightselected extends Component {
   render() {
-    const {
-      getParam: {arrival, departure},
-    } = this.props.navigation;
-
-    console.log(getParam('data'));
+    const {getParam} = this.props.navigation;
+    const {arrival, departure} = getParam('data');
 
     return (
       <View>
@@ -50,9 +47,7 @@ class Chatayflightselected extends Component {
             block
             light
             style={styles.buttoncta}>
-            <Text style={styles.textbuttoncta}>
-              CX{getParam.arrival} ARRIVAL
-            </Text>
+            <Text style={styles.textbuttoncta}>CX{arrival} ARRIVAL</Text>
           </Button>
           <Button block light style={styles.buttoncta}>
             <Text style={styles.textbuttoncta}>CX{departure} DEPARTURE</Text>
