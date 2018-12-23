@@ -3,7 +3,7 @@ import { View, Text, Image, ScrollView } from "react-native";
 import { Button, Input, Item } from "native-base";
 import styles from "./styles";
 
-class Chatayflighthomes extends Component {
+class Chatayflighthomesdept extends Component {
   render() {
     const { getParam } = this.props.navigation;
 
@@ -42,7 +42,7 @@ class Chatayflighthomes extends Component {
               textAlign: "center"
             }}
           >
-            Cathay Pacific CX{getParam("data")} ARRIVAL
+            Cathay Pacific CX{getParam("data")} DEPARTURE{" "}
           </Text>
           <View>
             <Image
@@ -186,6 +186,36 @@ class Chatayflighthomes extends Component {
                 position: "absolute",
                 zIndex: 10,
                 top: 130,
+                right: 20
+              }}
+            >
+              <Button
+                onPress={() => this.props.navigation.navigate("")}
+                style={{ backgroundColor: "none" }}
+              >
+                <Image
+                  style={{ marginLeft: 10, height: 40, width: 40 }}
+                  source={require("../../assets/icdelayreport.png")}
+                />
+              </Button>
+              <Text
+                style={{
+                  textAlign: "center",
+                  color: "#000000",
+                  fontWeight: "bold",
+                  fontSize: 16
+                }}
+              >
+                DELAY {"\n"}REPORT
+              </Text>
+            </View>
+
+            <View
+              style={{
+                textAlign: "center",
+                position: "absolute",
+                zIndex: 10,
+                top: 130,
                 left: 138
               }}
             >
@@ -211,4 +241,4 @@ class Chatayflighthomes extends Component {
   }
 }
 
-export default Chatayflighthomes;
+export default Chatayflighthomesdept;

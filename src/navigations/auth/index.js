@@ -5,6 +5,7 @@ import Chataylogin from './../../screens/chataylogin'
 import Chatayflightselect from './../../screens/chatayflightselect'
 import Chatayflightselected from './../../screens/chatayflightselected'
 import Chatayflighthomes from './../../screens/chatayflighthomes'
+import Chatayflighthomesdept from './../../screens/chatayflighthomesdept'
 
 const stackConfig = {
 	Login: {
@@ -37,10 +38,16 @@ const stackConfig = {
 			header: null
 		}
 	},
+	Chatayflighthomesdept: {
+		screen: Chatayflighthomesdept,
+		navigationOptions: {
+			header: null
+		}
+	},
 }
 
 const AppNavigator = createStackNavigator(stackConfig, {
-	initialRouteName: 'Chatayflighthomes'
+	initialRouteName: 'Login'
 })
 
 const AppContainer = createAppContainer(AppNavigator)
