@@ -6,6 +6,12 @@ import Chatayflightselect from './../../screens/chatayflightselect'
 import Chatayflightselected from './../../screens/chatayflightselected'
 import Chatayflighthomes from './../../screens/chatayflighthomes'
 import Chatayflighthomesdept from './../../screens/chatayflighthomesdept'
+import Chatayarrivaltiming from './../../screens/chatayarrivaltiming'
+import Chatayarrivalstaff from './../../screens/chatayarrivalstaff'
+import Chatayarrivalfis from './../../screens/chatayarrivalfis'
+import Chatayarrivalcontact from './../../screens/chatayarrivalcontact'
+import Chatayarrivalclose from './../../screens/chatayarrivalclose'
+import Chataydeptdelay from './../../screens/chataydeptdelay'
 
 const stackConfig = {
 	Login: {
@@ -44,10 +50,46 @@ const stackConfig = {
 			header: null
 		}
 	},
+	Chatayarrivaltiming: {
+		screen: Chatayarrivaltiming,
+		navigationOptions: {
+			header: null
+		}
+	},
+	Chatayarrivalstaff: {
+		screen: Chatayarrivalstaff,
+		navigationOptions: {
+			header: null
+		}
+	},
+	Chatayarrivalfis: {
+		screen: Chatayarrivalfis,
+		navigationOptions: {
+			header: null
+		}
+	},
+	Chatayarrivalcontact: {
+		screen: Chatayarrivalcontact,
+		navigationOptions: {
+			header: null
+		}
+	},
+	Chatayarrivalclose: {
+		screen: Chatayarrivalclose,
+		navigationOptions: {
+			header: null
+		}
+	},
+	Chataydeptdelay: {
+		screen: Chataydeptdelay,
+		navigationOptions: {
+			header: null
+		}
+	},
 }
 
 const AppNavigator = createStackNavigator(stackConfig, {
-	initialRouteName: 'Login'
+	initialRouteName: 'Chatayflightselect'
 })
 
 const AppContainer = createAppContainer(AppNavigator)

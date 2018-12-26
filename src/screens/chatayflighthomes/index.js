@@ -1,11 +1,19 @@
 import React, { Component } from "react";
-import { View, Text, Image, ScrollView } from "react-native";
+import { View, Text, Image, ScrollView, AsyncStorage } from "react-native";
 import { Button, Input, Item } from "native-base";
 import styles from "./styles";
 
 class Chatayflighthomes extends Component {
+
+  navigateTo = (pages, data) => {
+    this.props.navigation.navigate(pages, {
+      data,
+    });
+  };
+
   render() {
-    const { getParam } = this.props.navigation;
+    const { getParam } = this.props.navigation; 
+    const newArrival  = getParam('data');
 
     return (
       <View>
@@ -65,11 +73,11 @@ class Chatayflighthomes extends Component {
               }}
             >
               <Button
-                onPress={() => this.props.navigation.navigate("")}
+                onPress={() => this.navigateTo('Chatayarrivalfis', newArrival)}
                 style={{ backgroundColor: "none" }}
               >
                 <Image
-                  style={{ height: 40, width: 30 }}
+                  style={{ height: 40, width: 30, marginLeft: -3 }}
                   source={require("../../assets/icfis.png")}
                 />
               </Button>
@@ -90,7 +98,8 @@ class Chatayflighthomes extends Component {
               }}
             >
               <Button
-                onPress={() => this.props.navigation.navigate("")}
+                onPress={() => this.navigateTo('Chatayarrivaltiming', newArrival)}
+
                 style={{ backgroundColor: "none" }}
               >
                 <Image
@@ -115,7 +124,7 @@ class Chatayflighthomes extends Component {
               }}
             >
               <Button
-                onPress={() => this.props.navigation.navigate("")}
+                onPress={() => this.navigateTo('Chatayarrivalstaff', newArrival)}
                 style={{ backgroundColor: "none" }}
               >
                 <Image
@@ -140,7 +149,7 @@ class Chatayflighthomes extends Component {
               }}
             >
               <Button
-                onPress={() => this.props.navigation.navigate("")}
+                onPress={() => this.navigateTo('Chatayarrivalcontact', newArrival)}
                 style={{ backgroundColor: "none" }}
               >
                 <Image
@@ -165,7 +174,7 @@ class Chatayflighthomes extends Component {
               }}
             >
               <Button
-                onPress={() => this.props.navigation.navigate("")}
+                onPress={() => this.navigateTo('Chatayarrivalclose', newArrival)}
                 style={{ backgroundColor: "none" }}
               >
                 <Image
@@ -204,6 +213,9 @@ class Chatayflighthomes extends Component {
                 CX{getParam("data")}
               </Text>
             </View>
+            
+            
+
           </View>
         </View>
       </View>

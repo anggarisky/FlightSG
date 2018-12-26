@@ -1,18 +1,36 @@
 import React, {Component} from 'react';
-import {View, Text, Image, ScrollView} from 'react-native';
+import {View, Text, Image, ScrollView, AsyncStorage} from 'react-native';
 import {Button, Input, Item} from 'native-base';
 import styles from './styles';
 
 class Chatayflightselected extends Component {
+
   navigateTo = (pages, data) => {
-    this.props.navigation.navigate('Chatayflighthomes', {
+    this.props.navigation.navigate(pages, {
       data,
     });
   };
 
+  constructor(props) {
+    super(props);
+  
+    this.state = {
+      getFlightType: "",
+      getFlightTypeII: "",
+    }
+
+  }
+
+  componentDidMount = () => {
+    AsyncStorage.setItem('getFlightType', this.state.getFlightType);
+    AsyncStorage.setItem('getFlightTypeII', this.state.getFlightTypeII);
+  } 
+
   render() {
     const {getParam} = this.props.navigation;
     const {arrival, departure} = getParam('data');
+    this.state.getFlightType = JSON.stringify(arrival);
+    this.state.getFlightTypeII = JSON.stringify(departure);
 
     return (
       <View>

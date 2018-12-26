@@ -4,8 +4,16 @@ import { Button, Input, Item } from "native-base";
 import styles from "./styles";
 
 class Chatayflighthomesdept extends Component {
+
+  navigateTo = (pages, data) => {
+    this.props.navigation.navigate(pages, {
+      data,
+    });
+  };
+
   render() {
     const { getParam } = this.props.navigation;
+    const newArrival  = getParam('data');
 
     return (
       <View>
@@ -35,14 +43,14 @@ class Chatayflighthomesdept extends Component {
               marginBottom: 40,
               lineHeight: 30,
               marginLeft: 70,
-              width: 180,
+              width: 220,
               color: "#707070",
               fontWeight: "bold",
               fontSize: 22,
               textAlign: "center"
             }}
           >
-            Cathay Pacific CX{getParam("data")} DEPARTURE{" "}
+            Cathay Pacific CX{getParam("data")} DEPARTURE
           </Text>
           <View>
             <Image
@@ -190,7 +198,7 @@ class Chatayflighthomesdept extends Component {
               }}
             >
               <Button
-                onPress={() => this.props.navigation.navigate("")}
+                onPress={() => this.navigateTo('Chataydeptdelay', newArrival)}
                 style={{ backgroundColor: "none" }}
               >
                 <Image
