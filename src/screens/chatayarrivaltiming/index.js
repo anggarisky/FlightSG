@@ -1,18 +1,28 @@
 import React, { Component } from "react";
-import { View, Text, Image, ScrollView, Alert } from "react-native";
+import { View, Text, Image, ScrollView, Alert, AsyncStorage } from "react-native";
 import { Button, Input, Item } from "native-base";
 import styles from "./styles";
 
 class Chatayarrivaltiming extends Component {
 
+  saveArrivalTiming = () => {
+    AsyncStorage.setItem('AOB', this.state.AOB);
+    AsyncStorage.setItem('PDO', this.state.PDO);
+    AsyncStorage.setItem('PBD', this.state.PBD);
+    AsyncStorage.setItem('SRP', this.state.SRP);
+    AsyncStorage.setItem('APO', this.state.APO);
+    AsyncStorage.setItem('WCP', this.state.WCP);
+    AsyncStorage.setItem('BAG', this.state.BAG);
+  }
+
   state = {
-    AOB: 'Aircraft On Block',
-    PDO: 'Pax Door Open',
-    PBD: 'Pax Begin Disembark',
-    SRP: 'Strollers Restored to Pax',
-    APO: 'Arrival Pax Off',
-    WCP: 'WCH Pax',
-    BAG: 'First / Last Priority Bag',
+    AOB: '',
+    PDO: '',
+    PBD: '',
+    SRP: '',
+    APO: '',
+    WCP: '',
+    BAG: '',
   }
 
   aobTime = () => {
@@ -59,7 +69,7 @@ class Chatayarrivaltiming extends Component {
 
   render() {
 
-    const { getParam } = this.props.navigation; 
+    const { getParam } = this.props.navigation;
 
     return (
       <ScrollView>
@@ -106,7 +116,7 @@ class Chatayarrivaltiming extends Component {
               style={styles.buttoncta}>
 
               <Text style={styles.textbuttoncta}>
-                {this.state.AOB}
+                Aircraft on Block {'\n' + this.state.AOB}
               </Text>
 
           </Button>
@@ -118,7 +128,7 @@ class Chatayarrivaltiming extends Component {
               style={styles.buttoncta}>
 
               <Text style={styles.textbuttoncta}>
-                {this.state.PDO}
+                Pax Door Open {'\n' + this.state.PDO}
               </Text>
 
           </Button>
@@ -130,7 +140,7 @@ class Chatayarrivaltiming extends Component {
               style={styles.buttoncta}>
 
               <Text style={styles.textbuttoncta}>
-                {this.state.PBD}
+                Pax Begin Disembark {'\n' + this.state.PBD}
               </Text>
 
           </Button>
@@ -142,7 +152,7 @@ class Chatayarrivaltiming extends Component {
               style={styles.buttoncta}>
 
               <Text style={styles.textbuttoncta}>
-                {this.state.SRP}
+                Strollers Restored to Pax {'\n' + this.state.SRP}
               </Text>
 
           </Button>
@@ -154,7 +164,7 @@ class Chatayarrivaltiming extends Component {
               style={styles.buttoncta}>
 
               <Text style={styles.textbuttoncta}>
-                {this.state.APO}
+                Arrival Pax Off {'\n' + this.state.APO}
               </Text>
 
           </Button>
@@ -166,7 +176,7 @@ class Chatayarrivaltiming extends Component {
               style={styles.buttoncta}>
 
               <Text style={styles.textbuttoncta}>
-                {this.state.WCP}
+                WCH Pax {'\n' + this.state.WCP}
               </Text>
 
           </Button>
@@ -178,7 +188,19 @@ class Chatayarrivaltiming extends Component {
               style={styles.buttoncta}>
 
               <Text style={styles.textbuttoncta}>
-                {this.state.BAG}
+                First / Last Priority Bag {'\n' + this.state.BAG}
+              </Text>
+
+          </Button>
+
+          <Button
+              onPress={this.saveArrivalTiming}
+              block
+              light
+              style={styles.buttonsave}>
+
+              <Text style={styles.textbuttoncta}>
+                Save Data
               </Text>
 
           </Button>

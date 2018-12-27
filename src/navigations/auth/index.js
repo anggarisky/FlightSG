@@ -89,7 +89,7 @@ const stackConfig = {
 }
 
 const AppNavigator = createStackNavigator(stackConfig, {
-	initialRouteName: 'Chatayflightselect'
+	initialRouteName: 'Login'
 })
 
 const AppContainer = createAppContainer(AppNavigator)

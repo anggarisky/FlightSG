@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, Image, ScrollView } from "react-native";
+import { View, Text, Image, ScrollView, AsyncStorage } from "react-native";
 import { Button, Input, Item, DatePicker } from "native-base";
 import styles from "./styles";
 
@@ -7,11 +7,74 @@ class Chatayarrivalfis extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { chosenDate: new Date() };
+    this.state = { 
+      chosenDate: new Date(),
+      flightGateNo: "",
+      flightPaxLoad: "",
+      flightSTA: "",
+      flightVIP: "",
+      flightCIP: "",
+      flightUM: "",
+      flightWCHR: "",
+      flightMEDA: "",
+      flightSTATE: "", 
+    };
     this.setDate = this.setDate.bind(this);
   }
+
   setDate(newDate) {
     this.setState({ chosenDate: newDate });
+  }
+
+  componentDidMount = () => {
+    AsyncStorage.getItem('flightGateNo').then((value) => this.setState({ 'flightGateNo': value }));
+    AsyncStorage.getItem('flightPaxLoad').then((value) => this.setState({ 'flightPaxLoad': value }));
+    AsyncStorage.getItem('flightSTA').then((value) => this.setState({ 'flightSTA': value }));
+    AsyncStorage.getItem('flightVIP').then((value) => this.setState({ 'flightVIP': value }));
+    AsyncStorage.getItem('flightCIP').then((value) => this.setState({ 'flightCIP': value }));
+    AsyncStorage.getItem('flightUM').then((value) => this.setState({ 'flightUM': value }));
+    AsyncStorage.getItem('flightWCHR').then((value) => this.setState({ 'flightWCHR': value }));
+    AsyncStorage.getItem('flightMEDA').then((value) => this.setState({ 'flightMEDA': value }));
+    AsyncStorage.getItem('flightSTATE').then((value) => this.setState({ 'flightSTATE': value }));
+  } 
+
+  setflightGateNo = (value) => {
+      AsyncStorage.setItem('flightGateNo', value);
+      this.setState({ 'flightGateNo': value });
+  }
+
+  setflightPaxLoad = (value) => {
+      AsyncStorage.setItem('flightPaxLoad', value);
+      this.setState({ 'flightPaxLoad': value });
+  }
+
+  setflightSTA = (value) => {
+      AsyncStorage.setItem('flightSTA', value);
+      this.setState({ 'flightSTA': value });
+  }
+  setflightVIP = (value) => {
+      AsyncStorage.setItem('flightVIP', value);
+      this.setState({ 'flightVIP': value });
+  }
+  setflightCIP = (value) => {
+      AsyncStorage.setItem('flightCIP', value);
+      this.setState({ 'flightCIP': value });
+  }
+  setflightUM = (value) => {
+      AsyncStorage.setItem('flightUM', value);
+      this.setState({ 'flightUM': value });
+  }
+  setflightWCHR = (value) => {
+      AsyncStorage.setItem('flightWCHR', value);
+      this.setState({ 'flightWCHR': value });
+  }
+  setflightMEDA = (value) => {
+      AsyncStorage.setItem('flightMEDA', value);
+      this.setState({ 'flightMEDA': value });
+  }
+  setflightSTATE = (value) => {
+      AsyncStorage.setItem('flightSTATE', value);
+      this.setState({ 'flightSTATE': value });
   }
 
   render() {
@@ -57,7 +120,7 @@ class Chatayarrivalfis extends Component {
           </Text>
 
           <Item regular style={{marginBottom: 16}} >
-                <Input onChangeText={username => this.setState({username})} autoCapitalize="none" placeholder='Gate No:' />
+                <Input value={this.state.flightGateNo} onChangeText={this.setflightGateNo} autoCapitalize="none" placeholder='Gate No:' />
               </Item>
 
                 <Item regular style={{height: 50, marginBottom: 16}} >
@@ -78,38 +141,38 @@ class Chatayarrivalfis extends Component {
                 </Item>
 
           <Item regular style={{marginBottom: 16}} >
-                <Input onChangeText={password => this.setState({password})} autoCapitalize="none" placeholder='Pax Load:' />
+                <Input value={this.state.flightPaxLoad} onChangeText={this.setflightPaxLoad} autoCapitalize="none" placeholder='Pax Load:' />
               </Item>
 
           <Item regular style={{marginBottom: 16}} >
-                <Input onChangeText={password => this.setState({password})} autoCapitalize="none" placeholder='STA/ETA/ATA:' />
+                <Input value={this.state.flightSTA} onChangeText={this.setflightSTA} autoCapitalize="none" placeholder='STA/ETA/ATA:' />
               </Item>
 
               <Item regular style={{marginBottom: 16}} >
-                <Input onChangeText={password => this.setState({password})} autoCapitalize="none" placeholder='VIP:' />
+                <Input value={this.state.flightVIP} onChangeText={this.setflightVIP} autoCapitalize="none" placeholder='VIP:' />
               </Item>
 
               <Item regular style={{marginBottom: 16}} >
-                <Input onChangeText={password => this.setState({password})} autoCapitalize="none" placeholder='CIP:' />
-              </Item>
-
-
-              <Item regular style={{marginBottom: 16}} >
-                <Input onChangeText={password => this.setState({password})} autoCapitalize="none" placeholder='UM:' />
+                <Input value={this.state.flightCIP} onChangeText={this.setflightCIP} autoCapitalize="none" placeholder='CIP:' />
               </Item>
 
 
               <Item regular style={{marginBottom: 16}} >
-                <Input onChangeText={password => this.setState({password})} autoCapitalize="none" placeholder='WCHR:' />
+                <Input value={this.state.flightUM} onChangeText={this.setflightUM} autoCapitalize="none" placeholder='UM:' />
               </Item>
 
 
               <Item regular style={{marginBottom: 16}} >
-                <Input onChangeText={password => this.setState({password})} autoCapitalize="none" placeholder='MEDA:' />
+                <Input value={this.state.flightWCHR} onChangeText={this.setflightWCHR} autoCapitalize="none" placeholder='WCHR:' />
+              </Item>
+
+
+              <Item regular style={{marginBottom: 16}} >
+                <Input value={this.state.flightMEDA} onChangeText={this.setflightMEDA} autoCapitalize="none" placeholder='MEDA:' />
               </Item>
 
               <Item regular style={{marginBottom: 16}} >
-                <Input onChangeText={password => this.setState({password})} autoCapitalize="none" placeholder='STATE ETC:' />
+                <Input value={this.state.flightSTATE} onChangeText={this.setflightSTATE} autoCapitalize="none" placeholder='STATE ETC:' />
               </Item>
 
 

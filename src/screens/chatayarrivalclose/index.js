@@ -15,6 +15,22 @@ class Chatayarrivalclose extends Component {
         staffTwo: "",
         getFlightType: "",
         getFlightTypeII: "",
+        flightGateNo: "",
+        flightPaxLoad: "",
+        flightSTA: "",
+        flightVIP: "",
+        flightCIP: "",
+        flightUM: "",
+        flightWCHR: "",
+        flightMEDA: "",
+        flightSTATE: "", 
+        AOB: "",
+        PDO: '',
+        PBD: '',
+        SRP: '',
+        APO: '',
+        WCP: '',
+        BAG: '',
       }
 
     }
@@ -22,8 +38,28 @@ class Chatayarrivalclose extends Component {
     componentDidMount = () => {
       AsyncStorage.getItem('staffOne').then((value) => this.setState({ 'staffOne': value }));
       AsyncStorage.getItem('staffTwo').then((value) => this.setState({ 'staffTwo': value }));
+
       AsyncStorage.getItem('getFlightType').then((getFlightType) => this.setState({ 'getFlightType': getFlightType }));
       AsyncStorage.getItem('getFlightTypeII').then((getFlightTypeII) => this.setState({ 'getFlightTypeII': getFlightTypeII }));
+     
+      AsyncStorage.getItem('flightGateNo').then((flightGateNo) => this.setState({ 'flightGateNo': flightGateNo }));
+      AsyncStorage.getItem('flightPaxLoad').then((value) => this.setState({ 'flightPaxLoad': value }));
+      AsyncStorage.getItem('flightSTA').then((value) => this.setState({ 'flightSTA': value }));
+      AsyncStorage.getItem('flightVIP').then((value) => this.setState({ 'flightVIP': value }));
+      AsyncStorage.getItem('flightCIP').then((value) => this.setState({ 'flightCIP': value }));
+      AsyncStorage.getItem('flightUM').then((value) => this.setState({ 'flightUM': value }));
+      AsyncStorage.getItem('flightWCHR').then((value) => this.setState({ 'flightWCHR': value }));
+      AsyncStorage.getItem('flightMEDA').then((value) => this.setState({ 'flightMEDA': value }));
+      AsyncStorage.getItem('flightSTATE').then((value) => this.setState({ 'flightSTATE': value }));
+
+      AsyncStorage.getItem('AOB').then((AOB) => this.setState({ 'AOB': AOB }));
+      AsyncStorage.getItem('PDO').then((PDO) => this.setState({ 'PDO': PDO }));
+      AsyncStorage.getItem('PBD').then((PBD) => this.setState({ 'PBD': PBD }));
+      AsyncStorage.getItem('SRP').then((SRP) => this.setState({ 'SRP': SRP }));
+      AsyncStorage.getItem('APO').then((APO) => this.setState({ 'APO': APO }));
+      AsyncStorage.getItem('WCP').then((WCP) => this.setState({ 'WCP': WCP }));
+      AsyncStorage.getItem('BAG').then((BAG) => this.setState({ 'BAG': BAG }));
+
     } 
 
     handleEmail = () => {
@@ -36,18 +72,55 @@ class Chatayarrivalclose extends Component {
             'Flight Reports.\n\n' + 
 
             'CX' + this.state.getFlightType + ' Arrival\n\n' + 
+
             'Staff A1: ' + this.state.staffOne + 
-            '\n Staff A2: ' + this.state.staffTwo + 
+            '\n Staff A2: ' + this.state.staffTwo +
+
+            '\n\n Gate No: ' + this.state.flightGateNo +
+            '\n Pax Load: ' + this.state.flightPaxLoad +
+            '\n STA: ' + this.state.flightSTA +
+            '\n VIP: ' + this.state.flightVIP +
+            '\n CIP: ' + this.state.flightCIP +
+            '\n UM: ' + this.state.flightUM +
+            '\n WCHR: ' + this.state.flightWCHR +
+            '\n MEDA: ' + this.state.flightMEDA +
+            '\n STATE: ' + this.state.flightSTATE +
+
+            '\n\n Aircraft on Block: ' + this.state.AOB +
+            '\n\n Pax Door Open: ' + this.state.PDO +
+            '\n\n Pax Begin Disembark: ' + this.state.PBD +
+            '\n\n Strollers Restored to Pax: ' + this.state.SRP +
+            '\n\n Arrival Pax Off: ' + this.state.APO +
+            '\n\n WCH Pax: ' + this.state.WCP +
+            '\n\n First / Last Priority Bag: ' + this.state.BAG +
 
 
 
-            '\n\n\n Thank you for reporting.'
+            '\n\n Thank you for reporting.'
         
 
 
         }).catch(console.error);
         AsyncStorage.setItem('staffOne', "");
         AsyncStorage.setItem('staffTwo', "");
+
+        AsyncStorage.setItem('flightGateNo', "");
+        AsyncStorage.setItem('flightPaxLoad', "");
+        AsyncStorage.setItem('flightSTA', "");
+        AsyncStorage.setItem('flightVIP', "");
+        AsyncStorage.setItem('flightCIP', "");
+        AsyncStorage.setItem('flightUM', "");
+        AsyncStorage.setItem('flightWCHR', "");
+        AsyncStorage.setItem('flightMEDA', "");
+        AsyncStorage.setItem('flightSTATE', "");
+
+        AsyncStorage.setItem('AOB', "");
+        AsyncStorage.setItem('PDO', "");
+        AsyncStorage.setItem('PBD', "");
+        AsyncStorage.setItem('SRP', "");
+        AsyncStorage.setItem('APO', "");
+        AsyncStorage.setItem('WCP', "");
+        AsyncStorage.setItem('BAG', "");
     }
 
     

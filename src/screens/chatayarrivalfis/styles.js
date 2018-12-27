@@ -3,7 +3,7 @@ const styles = {
 		marginTop: 50,
 		marginLeft: 24,
 		marginRight: 24,
-		marginBottom: 70,
+		marginBottom: 270,
 		textAlign: "center",
 	},
 	textbuttoncta: {

@@ -13,13 +13,21 @@ const styles = {
 	},
 	buttoncta: {
 		width: 250,
-		height: 60,
+		height: 100,
 		backgroundColor: "none",
 		borderWidth: 1,
 		borderColor: "#000000",
 		borderRadius: 8,
 		marginLeft: 35,
 		marginBottom: 24,
+	},
+	buttonsave: {
+		width: 250,
+		height: 50,
+		backgroundColor: "#1abc9c",
+		borderRadius: 8,
+		marginLeft: 35,
+		marginTop: 40,
 	},
 }
 
