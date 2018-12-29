@@ -8,7 +8,7 @@ class Chatayarrivalfis extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      chosenDate: new Date(),
+      chosenDate: "",
       flightGateNo: "",
       flightPaxLoad: "",
       flightSTA: "",
@@ -79,7 +79,7 @@ class Chatayarrivalfis extends Component {
 
   render() {
 
-    const { getParam } = this.props.navigation; 
+    const { getParam } = this.props.navigation;
 
     return (
       <ScrollView>

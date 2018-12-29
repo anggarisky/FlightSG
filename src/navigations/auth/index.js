@@ -11,7 +11,15 @@ import Chatayarrivalstaff from './../../screens/chatayarrivalstaff'
 import Chatayarrivalfis from './../../screens/chatayarrivalfis'
 import Chatayarrivalcontact from './../../screens/chatayarrivalcontact'
 import Chatayarrivalclose from './../../screens/chatayarrivalclose'
+
+
+
 import Chataydeptdelay from './../../screens/chataydeptdelay'
+import Chatayfisdept from './../../screens/chatayfisdept'
+import Chataystaffdept from './../../screens/chataystaffdept'
+import Chataycontactdept from './../../screens/chataycontactdept'
+import Chatayclosedept from './../../screens/chatayclosedept'
+
 
 const stackConfig = {
 	Login: {
@@ -82,6 +90,33 @@ const stackConfig = {
 	},
 	Chataydeptdelay: {
 		screen: Chataydeptdelay,
+		navigationOptions: {
+			header: null
+		}
+	},
+
+
+
+	Chatayfisdept: {
+		screen: Chatayfisdept,
+		navigationOptions: {
+			header: null
+		}
+	},
+	Chataystaffdept: {
+		screen: Chataystaffdept,
+		navigationOptions: {
+			header: null
+		}
+	},
+	Chataycontactdept: {
+		screen: Chataycontactdept,
+		navigationOptions: {
+			header: null
+		}
+	},
+	Chatayclosedept: {
+		screen: Chatayclosedept,
 		navigationOptions: {
 			header: null
 		}

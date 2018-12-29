@@ -63,9 +63,9 @@ class Chatayarrivalclose extends Component {
     } 
 
     handleEmail = () => {
-        const to = ['angga@youtube.com'] // string or array of email addresses
+        const to = ['amsdu2m18465@gmail.com'] // string or array of email addresses
         email(to, {
-            subject: this.state.emailFlightSubject + ' CX' + this.state.getFlightType + '/' + this.state.getFlightTypeII,
+            subject: this.state.emailFlightSubject + ' CX' + this.state.getFlightType,
             
             body: 
 

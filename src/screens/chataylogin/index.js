@@ -19,16 +19,16 @@ class Chataylogin extends Component {
 		if(username == "" && password == "") {
 			Alert.alert('Please fill the Username and Password');
 		}
-		else if(username != "panda" && password != "lion"){
+		else if(username != "SINKKCX" && password != "SINKKCX_EAC"){
 			Alert.alert('Username not found');
 		}
-		else if(username == "panda" && password == ""){
+		else if(username == "SINKKCX" && password == ""){
 			Alert.alert('Password Empty');
 		}
-		else if(username == "" && password == "lion"){
+		else if(username == "" && password == "SINKKCX_EAC"){
 			Alert.alert('Username Empty');
 		}
-		else if(username == "panda" && password == "lion"){
+		else if(username == "SINKKCX" && password == "SINKKCX_EAC!"){
 			this.props.navigation.navigate("Chatayflightselect")
 		} else {
 			Alert.alert('Data not found');

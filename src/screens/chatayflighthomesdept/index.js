@@ -73,7 +73,7 @@ class Chatayflighthomesdept extends Component {
               }}
             >
               <Button
-                onPress={() => this.props.navigation.navigate("")}
+                onPress={() => this.navigateTo('Chatayfisdept', newArrival)}
                 style={{ backgroundColor: "none" }}
               >
                 <Image
@@ -123,7 +123,7 @@ class Chatayflighthomesdept extends Component {
               }}
             >
               <Button
-                onPress={() => this.props.navigation.navigate("")}
+                onPress={() => this.navigateTo('Chataystaffdept', newArrival)}
                 style={{ backgroundColor: "none" }}
               >
                 <Image
@@ -148,7 +148,7 @@ class Chatayflighthomesdept extends Component {
               }}
             >
               <Button
-                onPress={() => this.props.navigation.navigate("")}
+                onPress={() => this.navigateTo('Chataycontactdept', newArrival)}
                 style={{ backgroundColor: "none" }}
               >
                 <Image
@@ -173,7 +173,7 @@ class Chatayflighthomesdept extends Component {
               }}
             >
               <Button
-                onPress={() => this.props.navigation.navigate("")}
+                onPress={() => this.navigateTo('Chatayclosedept', newArrival)}
                 style={{ backgroundColor: "none" }}
               >
                 <Image

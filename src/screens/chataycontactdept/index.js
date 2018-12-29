@@ -4,7 +4,7 @@ import { Button, Input, Item } from "native-base";
 import call from 'react-native-phone-call'
 import styles from "./styles";
 
-class Chatayarrivalcontact extends Component {
+class Chataycontactdept extends Component {
 
   render() {
 
@@ -20,7 +20,7 @@ class Chatayarrivalcontact extends Component {
         <View style={styles.mainbody}>
           <Button
             onPress={() =>
-              this.props.navigation.navigate("Chatayflighthomes")
+              this.props.navigation.navigate("Chatayflighthomesdept")
             }
             style={{ backgroundColor: "none" }}
           >
@@ -192,4 +192,4 @@ class Chatayarrivalcontact extends Component {
   }
 }
 
-export default Chatayarrivalcontact;
+export default Chataycontactdept;
