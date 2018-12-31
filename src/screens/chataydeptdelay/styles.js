@@ -3,7 +3,7 @@ const styles = {
 		marginTop: 50,
 		marginLeft: 24,
 		marginRight: 24,
-		marginBottom: 70,
+		marginBottom: 150,
 		textAlign: "center",
 	},
 	textbuttoncta: {
@@ -28,7 +28,7 @@ const styles = {
 	    flexDirection: 'row',
 	    alignItems: 'center',
 	    justifyContent: 'center',
-	    marginBottom: 64,
+	    marginBottom: 22,
 	}
 }
 

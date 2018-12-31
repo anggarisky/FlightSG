@@ -38,6 +38,22 @@ class Chatayclosedept extends Component {
         flightGateItemDept: "",
         flightSDept: "",  
         flightWDept: "",
+
+
+        delayItemOneLeft: "",
+        delayItemOneRight: "",
+
+        delayItemTwoLeft: "",
+        delayItemTwoRight: "",
+
+        delayItemThreeLeft: "",
+        delayItemThreeRight: "",
+
+        delayItemFourLeft: "",
+        delayItemFourRight: "",
+
+        delayItemFiveLeft: "",
+        delayItemFiveRight: "",
       }
 
     }
@@ -69,6 +85,22 @@ class Chatayclosedept extends Component {
       AsyncStorage.getItem('flightGateItemDept').then((value) => this.setState({ 'flightGateItemDept': value }));
       AsyncStorage.getItem('flightSDept').then((value) => this.setState({ 'flightSDept': value }));
       AsyncStorage.getItem('flightWDept').then((value) => this.setState({ 'flightWDept': value }));
+
+
+      AsyncStorage.getItem('delayItemOneLeft').then((value) => this.setState({ 'delayItemOneLeft': value }));
+      AsyncStorage.getItem('delayItemOneRight').then((value) => this.setState({ 'delayItemOneRight': value }));
+
+      AsyncStorage.getItem('delayItemTwoLeft').then((value) => this.setState({ 'delayItemTwoLeft': value }));
+      AsyncStorage.getItem('delayItemTwoRight').then((value) => this.setState({ 'delayItemTwoRight': value }));
+
+      AsyncStorage.getItem('delayItemThreeLeft').then((value) => this.setState({ 'delayItemThreeLeft': value }));
+      AsyncStorage.getItem('delayItemThreeRight').then((value) => this.setState({ 'delayItemThreeRight': value }));
+
+      AsyncStorage.getItem('delayItemFourLeft').then((value) => this.setState({ 'delayItemFourLeft': value }));
+      AsyncStorage.getItem('delayItemFourRight').then((value) => this.setState({ 'delayItemFourRight': value }));
+
+      AsyncStorage.getItem('delayItemFiveLeft').then((value) => this.setState({ 'delayItemFiveLeft': value }));
+      AsyncStorage.getItem('delayItemFiveRight').then((value) => this.setState({ 'delayItemFiveRight': value }));
       
 
     } 
@@ -109,6 +141,11 @@ class Chatayclosedept extends Component {
             '\n S: ' + this.state.flightSDept +
             '\n W: ' + this.state.flightWDept +
 
+            '\n\n Delay Item One: ' + this.state.delayItemOneLeft + ' ' + this.state.delayItemOneRight +
+            '\n Delay Item Two: ' + this.state.delayItemTwoLeft + ' ' + this.state.delayItemTwoRight +
+            '\n Delay Item Three: ' + this.state.delayItemThreeLeft + ' ' + this.state.delayItemThreeRight +
+            '\n Delay Item Four: ' + this.state.delayItemFourLeft + ' ' + this.state.delayItemFourRight +
+            '\n Delay Item Five: ' + this.state.delayItemFiveLeft + ' ' + this.state.delayItemFiveRight +
 
 
             '\n\n Thank you for reporting.'

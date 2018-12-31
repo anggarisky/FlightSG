@@ -124,7 +124,7 @@ const stackConfig = {
 }
 
 const AppNavigator = createStackNavigator(stackConfig, {
-	initialRouteName: 'Login'
+	initialRouteName: 'Chataydeptdelay'
 })
 
 const AppContainer = createAppContainer(AppNavigator)

@@ -1,25 +1,101 @@
 import React, { Component } from "react";
-import { View, Text, Image, AsyncStorage } from "react-native";
+import { View, Text, Image, AsyncStorage, ScrollView } from "react-native";
 import { Button, Input, Item } from "native-base";
-import email from 'react-native-email'
 import styles from "./styles";
 
 class Chataydeptdelay extends Component {
 
-    handleEmail = () => {
-        const to = ['angga@fintechcapital.com'] // string or array of email addresses
-        email(to, {
-            subject: 'Close Flight CX123',
-            body: 'Flight has been closed, Thank you!'
-        }).catch(console.error)
+  constructor(props) {
+    super(props);
+  
+    this.state = {
+      delayItemOneLeft: "",
+      delayItemOneRight: "",
+
+      delayItemTwoLeft: "",
+      delayItemTwoRight: "",
+
+      delayItemThreeLeft: "",
+      delayItemThreeRight: "",
+
+      delayItemFourLeft: "",
+      delayItemFourRight: "",
+
+      delayItemFiveLeft: "",
+      delayItemFiveRight: "",
     }
+
+  }
+
+  componentDidMount = () => {
+    AsyncStorage.getItem('delayItemOneLeft').then((value) => this.setState({ 'delayItemOneLeft': value }));
+    AsyncStorage.getItem('delayItemOneRight').then((value) => this.setState({ 'delayItemOneRight': value }));
+
+    AsyncStorage.getItem('delayItemTwoLeft').then((value) => this.setState({ 'delayItemTwoLeft': value }));
+    AsyncStorage.getItem('delayItemTwoRight').then((value) => this.setState({ 'delayItemTwoRight': value }));
+
+    AsyncStorage.getItem('delayItemThreeLeft').then((value) => this.setState({ 'delayItemThreeLeft': value }));
+    AsyncStorage.getItem('delayItemThreeRight').then((value) => this.setState({ 'delayItemThreeRight': value }));
+
+    AsyncStorage.getItem('delayItemFourLeft').then((value) => this.setState({ 'delayItemFourLeft': value }));
+    AsyncStorage.getItem('delayItemFourRight').then((value) => this.setState({ 'delayItemFourRight': value }));
+
+    AsyncStorage.getItem('delayItemFiveLeft').then((value) => this.setState({ 'delayItemFiveLeft': value }));
+    AsyncStorage.getItem('delayItemFiveRight').then((value) => this.setState({ 'delayItemFiveRight': value }));
+
+  }
+
+  setdelayItemOneLeft = (value) => {
+      AsyncStorage.setItem('delayItemOneLeft', value);
+      this.setState({ 'delayItemOneLeft': value });
+  }
+  setdelayItemOneRight = (value) => {
+      AsyncStorage.setItem('delayItemOneRight', value);
+      this.setState({ 'delayItemOneRight': value });
+  }
+
+  setdelayItemTwoLeft = (value) => {
+      AsyncStorage.setItem('delayItemTwoLeft', value);
+      this.setState({ 'delayItemTwoLeft': value });
+  }
+  setdelayItemTwoRight = (value) => {
+      AsyncStorage.setItem('delayItemTwoRight', value);
+      this.setState({ 'delayItemTwoRight': value });
+  }
+
+  setdelayItemThreeLeft = (value) => {
+      AsyncStorage.setItem('delayItemThreeLeft', value);
+      this.setState({ 'delayItemThreeLeft': value });
+  }
+  setdelayItemThreeRight = (value) => {
+      AsyncStorage.setItem('delayItemThreeRight', value);
+      this.setState({ 'delayItemThreeRight': value });
+  }
+
+  setdelayItemFourLeft = (value) => {
+      AsyncStorage.setItem('delayItemFourLeft', value);
+      this.setState({ 'delayItemFourLeft': value });
+  }
+  setdelayItemFourRight = (value) => {
+      AsyncStorage.setItem('delayItemFourRight', value);
+      this.setState({ 'delayItemFourRight': value });
+  }
+
+  setdelayItemFiveLeft = (value) => {
+      AsyncStorage.setItem('delayItemFiveLeft', value);
+      this.setState({ 'delayItemFiveLeft': value });
+  }
+  setdelayItemFiveRight = (value) => {
+      AsyncStorage.setItem('delayItemFiveRight', value);
+      this.setState({ 'delayItemFiveRight': value });
+  }
 
   render() {
 
     const { getParam } = this.props.navigation; 
 
     return (
-      <View>
+      <ScrollView>
         <View style={styles.mainbody}>
           <Button
             onPress={() =>
@@ -59,11 +135,11 @@ class Chataydeptdelay extends Component {
           <View style={styles.buttonwrap}>
 
             <Item regular style={{width: 150, marginRight: 10}}>
-                <Input autoCapitalize="none" placeholder='Item Type' />
+                <Input value={this.state.delayItemOneLeft} onChangeText={this.setdelayItemOneLeft} autoCapitalize="none" placeholder='e.g: Baggage' />
               </Item>
 
               <Item regular style={{width: 150}}>
-                <Input autoCapitalize="none" placeholder='Duration' />
+                <Input value={this.state.delayItemOneRight} onChangeText={this.setdelayItemOneRight} autoCapitalize="none" placeholder='e.g: 2 mins' />
               </Item>
 
 
@@ -72,11 +148,11 @@ class Chataydeptdelay extends Component {
           <View style={styles.buttonwrap}>
 
             <Item regular style={{width: 150, marginRight: 10}}>
-                <Input autoCapitalize="none" placeholder='Item Type' />
+                <Input value={this.state.delayItemTwoLeft} onChangeText={this.setdelayItemTwoLeft} autoCapitalize="none" placeholder='Item Type' />
               </Item>
 
               <Item regular style={{width: 150}}>
-                <Input autoCapitalize="none" placeholder='Duration' />
+                <Input value={this.state.delayItemTwoRight} onChangeText={this.setdelayItemTwoRight} autoCapitalize="none" placeholder='Duration' />
               </Item>
 
 
@@ -85,11 +161,11 @@ class Chataydeptdelay extends Component {
           <View style={styles.buttonwrap}>
 
             <Item regular style={{width: 150, marginRight: 10}}>
-                <Input autoCapitalize="none" placeholder='Item Type' />
+                <Input value={this.state.delayItemThreeLeft} onChangeText={this.setdelayItemThreeLeft} autoCapitalize="none" placeholder='Item Type' />
               </Item>
 
               <Item regular style={{width: 150}}>
-                <Input autoCapitalize="none" placeholder='Duration' />
+                <Input value={this.state.delayItemThreeRight} onChangeText={this.setdelayItemThreeRight} autoCapitalize="none" placeholder='Duration' />
               </Item>
 
 
@@ -98,11 +174,11 @@ class Chataydeptdelay extends Component {
           <View style={styles.buttonwrap}>
 
             <Item regular style={{width: 150, marginRight: 10}}>
-                <Input autoCapitalize="none" placeholder='Item Type' />
+                <Input value={this.state.delayItemFourLeft} onChangeText={this.setdelayItemFourLeft} autoCapitalize="none" placeholder='Item Type' />
               </Item>
 
               <Item regular style={{width: 150}}>
-                <Input autoCapitalize="none" placeholder='Duration' />
+                <Input value={this.state.delayItemFourRight} onChangeText={this.setdelayItemFourRight} autoCapitalize="none" placeholder='Duration' />
               </Item>
 
 
@@ -111,18 +187,18 @@ class Chataydeptdelay extends Component {
           <View style={styles.buttonwrap}>
 
             <Item regular style={{width: 150, marginRight: 10}}>
-                <Input autoCapitalize="none" placeholder='Item Type' />
+                <Input value={this.state.delayItemFiveLeft} onChangeText={this.setdelayItemFiveLeft} autoCapitalize="none" placeholder='Item Type' />
               </Item>
 
               <Item regular style={{width: 150}}>
-                <Input autoCapitalize="none" placeholder='Duration' />
+                <Input value={this.state.delayItemFiveRight} onChangeText={this.setdelayItemFiveRight} autoCapitalize="none" placeholder='Duration' />
               </Item>
 
 
           </View>
 
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }
