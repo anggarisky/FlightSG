@@ -25,7 +25,7 @@ class Qatarflightselect extends Component {
   }
 
   navigateTo = data => {
-    this.props.navigation.navigate('', {
+    this.props.navigation.navigate('Qatarflightselected', {
       data,
     });
   };

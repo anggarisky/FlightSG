@@ -19,13 +19,13 @@ class Chataylogin extends Component {
 		if(username == "" && password == "") {
 			Alert.alert('Please fill the Username and Password');
 		}
-		else if(username != "SINKKCX" && password != "SINKKCX_EAC"){
+		else if(username != "SINKKCX" && password != "SINKKCX_EAC!"){
 			Alert.alert('Username not found');
 		}
 		else if(username == "SINKKCX" && password == ""){
 			Alert.alert('Password Empty');
 		}
-		else if(username == "" && password == "SINKKCX_EAC"){
+		else if(username == "" && password == "SINKKCX_EAC!"){
 			Alert.alert('Username Empty');
 		}
 		else if(username == "SINKKCX" && password == "SINKKCX_EAC!"){
