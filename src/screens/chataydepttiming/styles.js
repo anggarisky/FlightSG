@@ -1,0 +1,34 @@
+const styles = {
+	mainbody: {
+		marginTop: 50,
+		marginLeft: 24,
+		marginRight: 24,
+		marginBottom: 70,
+		textAlign: "center",
+	},
+	textbuttoncta: {
+		color: "#220148",
+		fontSize: 18,
+		textAlign: "center",
+	},
+	buttoncta: {
+		width: 250,
+		height: 100,
+		backgroundColor: "none",
+		borderWidth: 1,
+		borderColor: "#000000",
+		borderRadius: 8,
+		marginLeft: 35,
+		marginBottom: 24,
+	},
+	buttonsave: {
+		width: 250,
+		height: 50,
+		backgroundColor: "#1abc9c",
+		borderRadius: 8,
+		marginLeft: 35,
+		marginTop: 40,
+	},
+}
+
+export default styles

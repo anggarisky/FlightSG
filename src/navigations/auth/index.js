@@ -19,7 +19,7 @@ import Chatayfisdept from './../../screens/chatayfisdept'
 import Chataystaffdept from './../../screens/chataystaffdept'
 import Chataycontactdept from './../../screens/chataycontactdept'
 import Chatayclosedept from './../../screens/chatayclosedept'
-
+import Chataydepttiming from './../../screens/chataydepttiming'
 
 const stackConfig = {
 	Login: {
@@ -121,10 +121,16 @@ const stackConfig = {
 			header: null
 		}
 	},
+	Chataydepttiming: {
+		screen: Chataydepttiming,
+		navigationOptions: {
+			header: null
+		}
+	},
 }
 
 const AppNavigator = createStackNavigator(stackConfig, {
-	initialRouteName: 'Chataydeptdelay'
+	initialRouteName: 'Login'
 })
 
 const AppContainer = createAppContainer(AppNavigator)

@@ -98,7 +98,7 @@ class Chatayflighthomesdept extends Component {
               }}
             >
               <Button
-                onPress={() => this.props.navigation.navigate("")}
+                onPress={() => this.navigateTo('Chataydepttiming', newArrival)}
                 style={{ backgroundColor: "none" }}
               >
                 <Image

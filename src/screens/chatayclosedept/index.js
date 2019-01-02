@@ -12,6 +12,8 @@ class Chatayclosedept extends Component {
       this.state = {
         emailFlightSubject: "",
 
+        chosenDate: Date(),
+
         getFlightTypeII: "",
 
         staffOneDept: "",
@@ -54,6 +56,15 @@ class Chatayclosedept extends Component {
 
         delayItemFiveLeft: "",
         delayItemFiveRight: "",
+
+        PreDept: '',
+        ActDept: '',
+        AICDept: '',
+        SSUDept: '',
+        BGRDept: '',
+        LastPDept: '',
+        DoorCDept: '',
+
       }
 
     }
@@ -102,6 +113,13 @@ class Chatayclosedept extends Component {
       AsyncStorage.getItem('delayItemFiveLeft').then((value) => this.setState({ 'delayItemFiveLeft': value }));
       AsyncStorage.getItem('delayItemFiveRight').then((value) => this.setState({ 'delayItemFiveRight': value }));
       
+      AsyncStorage.getItem('PreDept').then((PreDept) => this.setState({ 'PreDept': PreDept }));
+      AsyncStorage.getItem('ActDept').then((ActDept) => this.setState({ 'ActDept': ActDept }));
+      AsyncStorage.getItem('AICDept').then((AICDept) => this.setState({ 'AICDept': AICDept }));
+      AsyncStorage.getItem('SSUDept').then((SSUDept) => this.setState({ 'SSUDept': SSUDept }));
+      AsyncStorage.getItem('BGRDept').then((BGRDept) => this.setState({ 'BGRDept': BGRDept }));
+      AsyncStorage.getItem('LastPDept').then((LastPDept) => this.setState({ 'LastPDept': LastPDept }));
+      AsyncStorage.getItem('DoorCDept').then((DoorCDept) => this.setState({ 'DoorCDept': DoorCDept }));
 
     } 
 
@@ -124,6 +142,7 @@ class Chatayclosedept extends Component {
 
             '\n\n Acft Reg: ' + this.state.ACRDept +
             '\nGate No: ' + this.state.flightGateNoDept +
+            '\nFIS Date: ' + this.state.chosenDate +
             '\n Pax Load: ' + this.state.flightPaxLoadDept +
             '\n STA: ' + this.state.flightSTADept +
             '\n STD: ' + this.state.flightSTDDept +
@@ -141,6 +160,14 @@ class Chatayclosedept extends Component {
             '\n S: ' + this.state.flightSDept +
             '\n W: ' + this.state.flightWDept +
 
+            '\n\n Pre-Boarding: ' + this.state.PreDept +
+            '\nActual Boarding: ' + this.state.ActDept +
+            '\nAIC: ' + this.state.AICDept +
+            '\nSSU: ' + this.state.SSUDept +
+            '\nBGR: ' + this.state.BGRDept +
+            '\nLast Pax: ' + this.state.LastPDept +
+            '\nDoor Close: ' + this.state.DoorCDept +
+
             '\n\n Delay Item One: ' + this.state.delayItemOneLeft + ' ' + this.state.delayItemOneRight +
             '\n Delay Item Two: ' + this.state.delayItemTwoLeft + ' ' + this.state.delayItemTwoRight +
             '\n Delay Item Three: ' + this.state.delayItemThreeLeft + ' ' + this.state.delayItemThreeRight +
@@ -153,7 +180,50 @@ class Chatayclosedept extends Component {
 
 
         }).catch(console.error);
+        AsyncStorage.setItem('staffOneDept', "");
+        AsyncStorage.setItem('staffTwoDept', "");
+        AsyncStorage.setItem('staffThreeDept', "");
+        AsyncStorage.setItem('staffFourDept', "");
+        AsyncStorage.setItem('staffFiveDept', "");
+
+        AsyncStorage.setItem('ACRDept', "");
         AsyncStorage.setItem('flightGateNoDept', "");
+        AsyncStorage.setItem('flightPaxLoadDept', "");
+        AsyncStorage.setItem('flightSTADept', "");
+        AsyncStorage.setItem('flightSTDDept', "");
+        AsyncStorage.setItem('flightVIPDept', "");
+        AsyncStorage.setItem('flightCIPDept', "");
+        AsyncStorage.setItem('flightDLDept', "");
+
+        AsyncStorage.setItem('flightEJDept', "");
+        AsyncStorage.setItem('flightInfantsDept', "");
+        AsyncStorage.setItem('flightMASSDept', "");
+        AsyncStorage.setItem('flightWCHDept', "");
+
+        AsyncStorage.setItem('flightDeporteeDept', "");
+        AsyncStorage.setItem('flightGateItemDept', "");
+        AsyncStorage.setItem('flightSDept', "");
+        AsyncStorage.setItem('flightWDept', "");
+
+        AsyncStorage.setItem('PreDept', "");
+        AsyncStorage.setItem('ActDept', "");
+        AsyncStorage.setItem('AICDept', "");
+        AsyncStorage.setItem('SSUDept', "");
+        AsyncStorage.setItem('BGRDept', "");
+        AsyncStorage.setItem('LastPDept', "");
+        AsyncStorage.setItem('DoorCDept', "");
+
+        AsyncStorage.setItem('delayItemTwoLeft', "");
+        AsyncStorage.setItem('delayItemOneRight', "");
+        AsyncStorage.setItem('delayItemOneLeft', "");
+        AsyncStorage.setItem('delayItemTwoRight', "");
+        AsyncStorage.setItem('delayItemThreeLeft', "");
+
+        AsyncStorage.setItem('delayItemThreeRight', "");
+        AsyncStorage.setItem('delayItemFourLeft', "");
+        AsyncStorage.setItem('delayItemFourRight', "");
+        AsyncStorage.setItem('delayItemFiveLeft', "");
+        AsyncStorage.setItem('delayItemFiveRight', "");
     }
 
     

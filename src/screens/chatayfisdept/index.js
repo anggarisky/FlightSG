@@ -8,7 +8,6 @@ class Chatayfisdept extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      chosenDate: "",
       ACRDept: "",
       flightGateNoDept: "",
       flightPaxLoadDept: "",
@@ -27,14 +26,10 @@ class Chatayfisdept extends Component {
       flightSDept: "",  
       flightWDept: "",
     };
-    this.setDate = this.setDate.bind(this);
-  }
-
-  setDate(newDate) {
-    this.setState({ chosenDate: newDate });
   }
 
   componentDidMount = () => {
+
     AsyncStorage.getItem('ACRDept').then((value) => this.setState({ 'ACRDept': value }));
     AsyncStorage.getItem('flightGateNoDept').then((value) => this.setState({ 'flightGateNoDept': value }));
     AsyncStorage.getItem('flightPaxLoadDept').then((value) => this.setState({ 'flightPaxLoadDept': value }));
@@ -179,23 +174,6 @@ class Chatayfisdept extends Component {
           <Item regular style={{marginBottom: 16}} >
                 <Input value={this.state.flightGateNoDept} onChangeText={this.setflightGateNo} autoCapitalize="none" placeholder='Gate No:' />
               </Item>
-
-                <Item regular style={{height: 50, marginBottom: 16}} >
-                  
-                  <DatePicker
-                    defaultDate={new Date(2018, 4, 4)}
-                    minimumDate={new Date(1990, 1, 1)}
-                    maximumDate={new Date(2030, 12, 31)}
-                    locale={"en"}
-                    timeZoneOffsetInMinutes={undefined}
-                    modalTransparent={false}
-                    animationType={"fade"}
-                    placeHolderText="Choose Date"
-                    textStyle={{ color: "#220148", fontSize: 16 }}
-                    onDateChange={this.setDate}
-                  />
-
-                </Item>
 
           <Item regular style={{marginBottom: 16}} >
                 <Input value={this.state.flightPaxLoadDept} onChangeText={this.setflightPaxLoad} autoCapitalize="none" placeholder='Pax Load:' />

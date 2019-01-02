@@ -10,6 +10,7 @@ class Chatayarrivalclose extends Component {
       super(props);
     
       this.state = {
+        chosenDateArrival: Date(),
         emailFlightSubject: "",
         staffOne: "",
         staffTwo: "",
@@ -78,6 +79,7 @@ class Chatayarrivalclose extends Component {
 
             '\n\n Gate No: ' + this.state.flightGateNo +
             '\n Pax Load: ' + this.state.flightPaxLoad +
+            '\n FIS Date: ' + this.state.chosenDateArrival +
             '\n STA: ' + this.state.flightSTA +
             '\n VIP: ' + this.state.flightVIP +
             '\n CIP: ' + this.state.flightCIP +

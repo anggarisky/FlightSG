@@ -8,7 +8,6 @@ class Chatayarrivalfis extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      chosenDate: "",
       flightGateNo: "",
       flightPaxLoad: "",
       flightSTA: "",
@@ -19,11 +18,6 @@ class Chatayarrivalfis extends Component {
       flightMEDA: "",
       flightSTATE: "", 
     };
-    this.setDate = this.setDate.bind(this);
-  }
-
-  setDate(newDate) {
-    this.setState({ chosenDate: newDate });
   }
 
   componentDidMount = () => {
@@ -122,23 +116,6 @@ class Chatayarrivalfis extends Component {
           <Item regular style={{marginBottom: 16}} >
                 <Input value={this.state.flightGateNo} onChangeText={this.setflightGateNo} autoCapitalize="none" placeholder='Gate No:' />
               </Item>
-
-                <Item regular style={{height: 50, marginBottom: 16}} >
-                  
-                  <DatePicker
-                    defaultDate={new Date(2018, 4, 4)}
-                    minimumDate={new Date(1990, 1, 1)}
-                    maximumDate={new Date(2030, 12, 31)}
-                    locale={"en"}
-                    timeZoneOffsetInMinutes={undefined}
-                    modalTransparent={false}
-                    animationType={"fade"}
-                    placeHolderText="Choose Date"
-                    textStyle={{ color: "#220148", fontSize: 16 }}
-                    onDateChange={this.setDate}
-                  />
-
-                </Item>
 
           <Item regular style={{marginBottom: 16}} >
                 <Input value={this.state.flightPaxLoad} onChangeText={this.setflightPaxLoad} autoCapitalize="none" placeholder='Pax Load:' />
