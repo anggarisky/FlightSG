@@ -16,7 +16,7 @@ class Login extends Component {
 				</View>
 				<View style={styles.mainbody}>
 						<Image style={{marginBottom: 30, marginLeft: 30, height: 70, width: 260}} source={require("../../assets/qatarlogo.png")} />
-					<Button block light style={styles.buttoncta}>
+					<Button block light style={styles.buttoncta} onPress={()=>this.props.navigation.navigate('Qatarlogin')}>
 			            <Text style={styles.textbuttoncta}>Qatar Airways</Text>
 			          </Button>
 				</View>

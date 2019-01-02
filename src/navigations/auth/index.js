@@ -21,6 +21,9 @@ import Chataycontactdept from './../../screens/chataycontactdept'
 import Chatayclosedept from './../../screens/chatayclosedept'
 import Chataydepttiming from './../../screens/chataydepttiming'
 
+import Qatarlogin from './../../screens/qatarlogin'
+import Qatarflightselect from './../../screens/qatarflightselect'
+
 const stackConfig = {
 	Login: {
 		screen: Login,
@@ -123,6 +126,20 @@ const stackConfig = {
 	},
 	Chataydepttiming: {
 		screen: Chataydepttiming,
+		navigationOptions: {
+			header: null
+		}
+	},
+
+
+	Qatarlogin: {
+		screen: Qatarlogin,
+		navigationOptions: {
+			header: null
+		}
+	},
+	Qatarflightselect: {
+		screen: Qatarflightselect,
 		navigationOptions: {
 			header: null
 		}
