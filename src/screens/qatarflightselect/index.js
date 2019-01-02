@@ -51,11 +51,11 @@ class Qatarflightselect extends Component {
             SINGAPORE STATION
           </Text>
 
-          <Text style={{marginLeft: 110, color: "#E04742", fontSize: 32}}>
+          <Text style={{marginBottom: -30, marginLeft: 100, color: "#E04742", fontSize: 52}}>
             TODAY
           </Text>
 
-          <View style={{marginTop: -45}}>
+          <View style={{marginTop: -45, position: "absolute", left: 14, top: 127}}>
             <Button
             onPress={() => this.props.navigation.navigate('')}
             style={{backgroundColor: 'none'}}>
@@ -83,7 +83,7 @@ class Qatarflightselect extends Component {
           </Button>
           </View>
 
-          <View style={{marginTop: 50}}>
+          <View style={{marginTop: 100}}>
             {(type || []).map((v, key) => (
             <Button
               block

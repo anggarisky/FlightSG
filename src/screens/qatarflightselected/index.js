@@ -85,7 +85,7 @@ class Qatarflightselected extends Component {
               }}
             >
               <Button
-                onPress={() => this.navigateTo('')}
+                onPress={() => this.props.navigation.navigate('Qatarflightclock')}
                 style={{ backgroundColor: "none" }}
               >
                 <Image
@@ -105,8 +105,8 @@ class Qatarflightselected extends Component {
                 textAlign: "center",
                 position: "absolute",
                 zIndex: 10,
-                top: 225,
-                right: 90
+                top: 220,
+                right: 80
               }}
             >
               <Button
@@ -115,13 +115,13 @@ class Qatarflightselected extends Component {
               >
                 <Image
                   style={{ marginLeft: 5, height: 40, width: 40 }}
-                  source={require("../../assets/icpeople.png")}
+                  source={require("../../assets/icdelayreport.png")}
                 />
               </Button>
               <Text
-                style={{ color: "#000000", fontWeight: "bold", fontSize: 16 }}
+                style={{ textAlign: "center", color: "#000000", fontWeight: "bold", fontSize: 16 }}
               >
-                STAFF
+                DELAY {"\n"}REPORT
               </Text>
             </View>
 
@@ -190,7 +190,7 @@ class Qatarflightselected extends Component {
               >
                 <Image
                   style={{ marginLeft: 10, height: 40, width: 40 }}
-                  source={require("../../assets/icdelayreport.png")}
+                  source={require("../../assets/iccamera.png")}
                 />
               </Button>
               <Text
@@ -201,7 +201,7 @@ class Qatarflightselected extends Component {
                   fontSize: 16
                 }}
               >
-                DELAY {"\n"}REPORT
+                CAMERA
               </Text>
             </View>
 

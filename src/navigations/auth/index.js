@@ -25,6 +25,7 @@ import Qatarlogin from './../../screens/qatarlogin'
 import Qatarflightselect from './../../screens/qatarflightselect'
 import Qatarflightselected from './../../screens/qatarflightselected'
 import Qatarcontact from './../../screens/qatarcontact'
+import Qatarflightclock from './../../screens/qatarflightclock'
 
 const stackConfig = {
 	Login: {
@@ -154,6 +155,12 @@ const stackConfig = {
 	},
 	Qatarcontact: {
 		screen: Qatarcontact,
+		navigationOptions: {
+			header: null
+		}
+	},
+	Qatarflightclock: {
+		screen: Qatarflightclock,
 		navigationOptions: {
 			header: null
 		}
