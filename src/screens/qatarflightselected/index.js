@@ -20,7 +20,7 @@ class Qatarflightselected extends Component {
         <Image style={{position: "absolute", zIndex: -1}} source={require("../../assets/bghomeqatar.png")} />
         <View style={styles.mainbody}>
           <Button
-            onPress={() => this.props.navigation.navigate('Chatayflightselect')}
+            onPress={() => this.props.navigation.navigate('Qatarflightselect')}
             style={{backgroundColor: 'none'}}>
             <Image
               style={{height: 50, width: 50}}
