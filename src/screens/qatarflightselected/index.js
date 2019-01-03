@@ -15,6 +15,32 @@ class Qatarflightselected extends Component {
     const {getParam} = this.props.navigation;
     const {arrival, departure} = getParam('data');
 
+    let screenTarget;
+    const screenA = (<Button
+                onPress={() => this.props.navigation.navigate("Qatarflightclock")}
+                style={{ backgroundColor: "none" }}
+              >
+                <Image
+                  style={{ marginLeft: 10, height: 40, width: 40 }}
+                  source={require("../../assets/icclock.png")}
+                />
+              </Button>);
+    const screenB = (<Button
+                onPress={() => this.props.navigation.navigate("Qatarflightclockdua")}
+                style={{ backgroundColor: "none" }}
+              >
+                <Image
+                  style={{ marginLeft: 10, height: 40, width: 40 }}
+                  source={require("../../assets/icclock.png")}
+                />
+              </Button>);
+
+    if(arrival == 942){
+      screenTarget = screenA
+    } else {
+      screenTarget = screenB
+    }
+
     return (
       <View>
         <Image style={{position: "absolute", zIndex: -1}} source={require("../../assets/bghomeqatar.png")} />
@@ -75,6 +101,9 @@ class Qatarflightselected extends Component {
               </Text>
             </View>
 
+
+
+
             <View
               style={{
                 textAlign: "center",
@@ -84,21 +113,16 @@ class Qatarflightselected extends Component {
                 right: 80
               }}
             >
-              <Button
-                onPress={() => this.props.navigation.navigate('Qatarflightclock')}
-                style={{ backgroundColor: "none" }}
-              >
-                <Image
-                  style={{ marginLeft: 10, height: 40, width: 40 }}
-                  source={require("../../assets/icclock.png")}
-                />
-              </Button>
+              <View>{screenTarget}</View>
               <Text
                 style={{ color: "#000000", fontWeight: "bold", fontSize: 16 }}
               >
                 CLOCK
               </Text>
             </View>
+
+
+
 
             <View
               style={{

@@ -26,6 +26,7 @@ import Qatarflightselect from './../../screens/qatarflightselect'
 import Qatarflightselected from './../../screens/qatarflightselected'
 import Qatarcontact from './../../screens/qatarcontact'
 import Qatarflightclock from './../../screens/qatarflightclock'
+import Qatarflightclockdua from './../../screens/qatarflightclockdua'
 
 const stackConfig = {
 	Login: {
@@ -165,10 +166,16 @@ const stackConfig = {
 			header: null
 		}
 	},
+	Qatarflightclockdua: {
+		screen: Qatarflightclockdua,
+		navigationOptions: {
+			header: null
+		}
+	},
 }
 
 const AppNavigator = createStackNavigator(stackConfig, {
-	initialRouteName: 'Qatarlogin'
+	initialRouteName: 'Login'
 })
 
 const AppContainer = createAppContainer(AppNavigator)
