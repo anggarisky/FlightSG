@@ -56,7 +56,7 @@ class Qatarlogin extends Component {
 			        </Item>
 
 					<Button onPress={this.myValidate} block light style={styles.buttoncta}>
-			           <Image style={{height: 80, width: 80}} source={require("../../assets/bgbtnqatarlogin.png")} />
+			           <Image style={{height: 80, width: 80}} source={require("../../assets/oryxbg.png")} />
 			        </Button>
 				</View>
 			</View>

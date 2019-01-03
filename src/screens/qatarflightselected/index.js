@@ -35,7 +35,7 @@ class Qatarflightselected extends Component {
               height: 100,
               width: 100,
             }}
-            source={require('../../assets/bgbtnqatarlogin.png')}
+            source={require('../../assets/oryxbg.png')}
           />
 
 

@@ -168,7 +168,7 @@ const stackConfig = {
 }
 
 const AppNavigator = createStackNavigator(stackConfig, {
-	initialRouteName: 'Login'
+	initialRouteName: 'Qatarlogin'
 })
 
 const AppContainer = createAppContainer(AppNavigator)
