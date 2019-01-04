@@ -146,7 +146,7 @@ class Qatarflightselected extends Component {
               }}
             >
               <Button
-                onPress={() => this.navigateTo('')}
+                onPress={() => this.props.navigation.navigate("Qatardelay")}
                 style={{ backgroundColor: "none" }}
               >
                 <Image

@@ -24,6 +24,21 @@ class Qatarcloseflightend extends Component {
       BOARDING: '',
       PAXDOORC: '',
       OFFCHOCKS: '',
+
+      qatarDelayOneLeft: "",
+      qatarDelayOneRight: "",
+
+      qatarDelayTwoLeft: "",
+      qatarDelayTwoRight: "",
+
+      qatarDelayThreeLeft: "",
+      qatarDelayThreeRight: "",
+
+      qatarDelayFourLeft: "",
+      qatarDelayFourRight: "",
+
+      qatarDelaySummary: "",
+      qatarDelayCodes: "",
     }
 
   }
@@ -45,6 +60,21 @@ class Qatarcloseflightend extends Component {
     AsyncStorage.getItem('PAXDOORC').then((PAXDOORC) => this.setState({ 'PAXDOORC': PAXDOORC }));
     AsyncStorage.getItem('OFFCHOCKS').then((OFFCHOCKS) => this.setState({ 'OFFCHOCKS': OFFCHOCKS }));
 
+    AsyncStorage.getItem('qatarDelayOneLeft').then((value) => this.setState({ 'qatarDelayOneLeft': value }));
+    AsyncStorage.getItem('qatarDelayOneRight').then((value) => this.setState({ 'qatarDelayOneRight': value }));
+
+    AsyncStorage.getItem('qatarDelayTwoLeft').then((value) => this.setState({ 'qatarDelayTwoLeft': value }));
+    AsyncStorage.getItem('qatarDelayTwoRight').then((value) => this.setState({ 'qatarDelayTwoRight': value }));
+
+    AsyncStorage.getItem('qatarDelayThreeLeft').then((value) => this.setState({ 'qatarDelayThreeLeft': value }));
+    AsyncStorage.getItem('qatarDelayThreeRight').then((value) => this.setState({ 'qatarDelayThreeRight': value }));
+
+    AsyncStorage.getItem('qatarDelayFourLeft').then((value) => this.setState({ 'qatarDelayFourLeft': value }));
+    AsyncStorage.getItem('qatarDelayFourRight').then((value) => this.setState({ 'qatarDelayFourRight': value }));
+
+    AsyncStorage.getItem('qatarDelaySummary').then((value) => this.setState({ 'qatarDelaySummary': value }));
+    AsyncStorage.getItem('qatarDelayCodes').then((value) => this.setState({ 'qatarDelayCodes': value }));
+
   }
 
   sendQatarEmail = () => {
@@ -59,19 +89,25 @@ class Qatarcloseflightend extends Component {
 
             'Clock Timing' +  
             '\nONCHOCKS:' +  this.state.ONCHOCKS +
-            '\nPAXOUT:' +  this.state.PAXOUT +
+            '\n\nPAXOUT:' +  this.state.PAXOUT +
             '\nCREWOUT:' +  this.state.CREWOUT +
-            '\nCATERING:' +  this.state.CATERING +
+            '\n\nCATERING:' +  this.state.CATERING +
             '\nCATERING DEPARTURE:' +  this.state.CATERINGDUA +
-            '\nCLEANING:' +  this.state.CLEANING +
+            '\n\nCLEANING:' +  this.state.CLEANING +
             '\nCLEANINGTU:' +  this.state.CLEANINGTU +
-            '\nENGINEER:' +  this.state.ENGINEER +
+            '\n\nENGINEER:' +  this.state.ENGINEER +
             '\nBOARDING:' +  this.state.BOARDING +
-            '\nPAXDOORC:' +  this.state.PAXDOORC +
+            '\n\nPAXDOORC:' +  this.state.PAXDOORC +
             '\nOFFCHOCKS:' +  this.state.OFFCHOCKS +
 
-            '\n\nFlight Information System' + 
-            '\n Placeholder:' +
+            '\n\nDelay Report' + 
+            '\nDelay Item One: ' +  this.state.qatarDelayOneLeft + ' ' + this.state.qatarDelayOneLeft +
+            '\nDelay Item Two: ' +  this.state.qatarDelayTwoLeft + ' ' + this.state.qatarDelayTwoRight +
+            '\nDelay Item Three: ' +  this.state.qatarDelayThreeLeft + ' ' + this.state.qatarDelayThreeRight +
+            '\nDelay Item Four: ' +  this.state.qatarDelayFourLeft + ' ' + this.state.qatarDelayFourRight +
+
+            '\nSummary: ' +  this.state.qatarDelaySummary +
+            '\nDelay Codes: ' +  this.state.qatarDelayCodes +
 
             '\n\n Thank you for reporting.'
         
@@ -106,7 +142,7 @@ class Qatarcloseflightend extends Component {
                 textAlign: "center"
               }}
             >
-              {this.state.qatarFlightType}/{this.state.qatarFlightTypeDua} FLIGHT DOCUMENTS HAS BEEN SENT TO YOUR EMAIL
+              {this.state.qatarFlightType}/{this.state.qatarFlightTypeDua} FLIGHT DOCUMENTS WILL BE SEND TO YOUR EMAIL
             </Text>
 
             <Image
@@ -135,7 +171,7 @@ class Qatarcloseflightend extends Component {
               style={styles.buttonsave}>
 
               <Text style={{fontSize: 20, color: "white"}}>
-                Save and Quit
+                Send Email and Quit
               </Text>
 
           </Button>

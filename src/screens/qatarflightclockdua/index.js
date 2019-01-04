@@ -10,6 +10,7 @@ class Qatarflightclockdua extends Component {
     AsyncStorage.setItem('PAXOUT', this.state.PAXOUT);
     AsyncStorage.setItem('CREWOUT', this.state.CREWOUT);
     AsyncStorage.setItem('CATERING', this.state.CATERING);
+    AsyncStorage.setItem('CATERINGDUA', this.state.CATERINGDUA);
     AsyncStorage.setItem('CLEANING', this.state.CLEANING);
     AsyncStorage.setItem('CLEANINGTU', this.state.CLEANINGTU);
     AsyncStorage.setItem('ENGINEER', this.state.ENGINEER);

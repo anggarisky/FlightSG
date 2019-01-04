@@ -36,7 +36,7 @@ class Qatarflightselect extends Component {
       <ScrollView style={{backgroundColor: "#541330"}}>
         <View style={styles.mainbody}>
           <Button
-            onPress={() => this.props.navigation.navigate('Qatarlogin')}
+            onPress={() => this.props.navigation.navigate('Qatarlogout')}
             style={{backgroundColor: 'none'}}>
             <Image
               style={{height: 50, width: 50}}
