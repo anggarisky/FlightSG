@@ -5,15 +5,27 @@ import styles from './styles';
 
 class Qatarflightselected extends Component {
 
-  navigateTo = data => {
-    this.props.navigation.navigate('', {
-      data,
-    });
-  };
+  constructor(props) {
+    super(props);
+  
+    this.state = {
+      qatarFlightType: "",
+      qatarFlightTypeDua: "",
+    }
+
+  }
+
+  componentDidMount = () => {
+    AsyncStorage.setItem('qatarFlightType', this.state.qatarFlightType);
+    AsyncStorage.setItem('qatarFlightTypeDua', this.state.qatarFlightTypeDua);
+  }
 
   render() {
     const {getParam} = this.props.navigation;
     const {arrival, departure} = getParam('data');
+    this.state.qatarFlightType = JSON.stringify(arrival);
+    this.state.qatarFlightTypeDua = JSON.stringify(departure);
+
 
     let screenTarget;
     const screenA = (<Button
@@ -184,7 +196,7 @@ class Qatarflightselected extends Component {
               }}
             >
               <Button
-                onPress={() => this.navigateTo('')}
+                onPress={() => this.props.navigation.navigate('Qatarcloseflight')}
                 style={{ backgroundColor: "none" }}
               >
                 <Image

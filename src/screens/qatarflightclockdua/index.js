@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, Image, ScrollView, AsyncStorage} from 'react-native';
+import {View, Text, Image, ScrollView, AsyncStorage, Alert} from 'react-native';
 import {Button, Input, Item} from 'native-base';
 import styles from './styles';
 
@@ -10,11 +10,14 @@ class Qatarflightclockdua extends Component {
     AsyncStorage.setItem('PAXOUT', this.state.PAXOUT);
     AsyncStorage.setItem('CREWOUT', this.state.CREWOUT);
     AsyncStorage.setItem('CATERING', this.state.CATERING);
+    AsyncStorage.setItem('CLEANING', this.state.CLEANING);
     AsyncStorage.setItem('CLEANINGTU', this.state.CLEANINGTU);
     AsyncStorage.setItem('ENGINEER', this.state.ENGINEER);
     AsyncStorage.setItem('BOARDING', this.state.BOARDING);
     AsyncStorage.setItem('PAXDOORC', this.state.PAXDOORC);
     AsyncStorage.setItem('OFFCHOCKS', this.state.OFFCHOCKS);
+    
+    Alert.alert('Data Saved');
   }
 
   state = {
