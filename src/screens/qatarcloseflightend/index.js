@@ -39,6 +39,16 @@ class Qatarcloseflightend extends Component {
 
       qatarDelaySummary: "",
       qatarDelayCodes: "",
+
+      qatarMOB: "",
+      qatarUPLIFT: "",
+      qatarFUELDOCK: "",
+      qatarTAKEOFFFUEL: "",
+      qatarREFSTART: "",
+      qatarREFCOMPLETED: "",
+      qatarFLOAD: "",
+      qatarFORDER: "",
+      qatarGATEITEMS: "",
     }
 
   }
@@ -75,6 +85,16 @@ class Qatarcloseflightend extends Component {
     AsyncStorage.getItem('qatarDelaySummary').then((value) => this.setState({ 'qatarDelaySummary': value }));
     AsyncStorage.getItem('qatarDelayCodes').then((value) => this.setState({ 'qatarDelayCodes': value }));
 
+    AsyncStorage.getItem('qatarMOB').then((value) => this.setState({ 'qatarMOB': value }));
+    AsyncStorage.getItem('qatarUPLIFT').then((value) => this.setState({ 'qatarUPLIFT': value }));
+    AsyncStorage.getItem('qatarFUELDOCK').then((value) => this.setState({ 'qatarFUELDOCK': value }));
+    AsyncStorage.getItem('qatarTAKEOFFFUEL').then((value) => this.setState({ 'qatarTAKEOFFFUEL': value }));
+    AsyncStorage.getItem('qatarREFSTART').then((value) => this.setState({ 'qatarREFSTART': value }));
+    AsyncStorage.getItem('qatarREFCOMPLETED').then((value) => this.setState({ 'qatarREFCOMPLETED': value }));
+    AsyncStorage.getItem('qatarFLOAD').then((value) => this.setState({ 'qatarFLOAD': value }));
+    AsyncStorage.getItem('qatarFORDER').then((value) => this.setState({ 'qatarFORDER': value }));
+    AsyncStorage.getItem('qatarGATEITEMS').then((value) => this.setState({ 'qatarGATEITEMS': value }));
+
   }
 
   sendQatarEmail = () => {
@@ -86,6 +106,17 @@ class Qatarcloseflightend extends Component {
             body: 
 
             'Flight Reports.\n\n' + 
+
+            'Flight Information System' +
+            '\nMOB:' +  this.state.qatarMOB +
+            '\nUPLIFT:' +  this.state.qatarUPLIFT +
+            '\nFUEL DOCKET:' +  this.state.qatarFUELDOCK +
+            '\nTAKE-OFF FUEL:' +  this.state.qatarTAKEOFFFUEL +
+            '\nREFUELLING START:' +  this.state.qatarREFSTART +
+            '\nREFUELLING COMPLETED:' +  this.state.qatarREFCOMPLETED +
+            '\nFinal Load:' +  this.state.qatarFLOAD +
+            '\nFinal Order:' +  this.state.qatarFORDER +
+            '\nGate Items:' +  this.state.qatarGATEITEMS +
 
             'Clock Timing' +  
             '\nONCHOCKS:' +  this.state.ONCHOCKS +
