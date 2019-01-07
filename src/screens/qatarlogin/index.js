@@ -19,16 +19,16 @@ class Qatarlogin extends Component {
 		if(username == "" && password == "") {
 			Alert.alert('Please fill the Username and Password');
 		}
-		else if(username != "SINNKQR" && password != "SINNKQR_EAC!"){
+		else if(username != "SINKKQR" && password != "SINKKQR_EAC!"){
 			Alert.alert('Username not found');
 		}
-		else if(username == "SINNKQR" && password == ""){
+		else if(username == "SINKKQR" && password == ""){
 			Alert.alert('Password Empty');
 		}
-		else if(username == "" && password == "SINNKQR_EAC!"){
+		else if(username == "" && password == "SINKKQR_EAC!"){
 			Alert.alert('Username Empty');
 		}
-		else if(username == "SINNKQR" && password == "SINNKQR_EAC!"){
+		else if(username == "SINKKQR" && password == "SINKKQR_EAC!"){
 			this.props.navigation.navigate("Qatarflightselect")
 		} else {
 			Alert.alert('Data not found');
