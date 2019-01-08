@@ -108,6 +108,19 @@ class Qatarflightfis extends Component {
             QR{this.state.qatarFlightType}/QR{this.state.qatarFlightTypeDua} {"\n"}DOH-SIN-DOH
           </Text>
 
+          <View style={styles.wrapcam}>
+            <Text style={styles.scanfis}>
+              SCAN FIS HERE
+            </Text>
+            <Button
+              style={{marginTop: 130, marginLeft: 110, backgroundColor: 'none'}}>
+              <Image
+                style={{height: 100, width: 100}}
+                source={require('../../assets/iccamerafis.png')}
+              />
+            </Button>
+          </View>
+
           <View style={styles.buttonwrap}>
             <Text style={{color: "#4a4a4a", fontSize: 14, fontWeight: "bold"}}>
               MOB 

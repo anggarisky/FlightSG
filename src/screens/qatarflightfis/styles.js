@@ -6,6 +6,14 @@ const styles = {
 		marginBottom: 70,
 		textAlign: "center",
 	},
+	wrapcam: {
+		flex: 1,
+		height: 400,
+		marginTop: 30,
+		borderRadius: 8,
+		borderWidth: 1,
+		borderColor: "#4a4a4a"
+	},
 	textbuttoncta: {
 		color: "#220148",
 		fontSize: 14,
@@ -33,6 +41,15 @@ const styles = {
 		textAlign: "center",
 		marginTop: 20,
 		marginLeft: -10,
+	},
+	scanfis: {
+		color: "#4a4a4a",
+		fontSize: 18,
+		fontWeight: "bold",
+		textAlign: "center",
+		marginBottom: -80,
+		marginLeft: -10,
+		marginTop: 140,
 	},
 	subtitlepage: {
 		color: "#FFFFFF",

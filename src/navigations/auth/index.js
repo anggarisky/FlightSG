@@ -210,7 +210,7 @@ const stackConfig = {
 }
 
 const AppNavigator = createStackNavigator(stackConfig, {
-	initialRouteName: 'Login'
+	initialRouteName: 'Qatarflightselect'
 })
 
 const AppContainer = createAppContainer(AppNavigator)
