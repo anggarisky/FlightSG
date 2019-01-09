@@ -32,6 +32,7 @@ import Qatarcloseflightend from './../../screens/qatarcloseflightend'
 import Qatardelay from './../../screens/qatardelay'
 import Qatarlogout from './../../screens/qatarlogout'
 import Qatarflightfis from './../../screens/qatarflightfis'
+import Qatarflightcamera from './../../screens/qatarflightcamera'
 
 const stackConfig = {
 	Login: {
@@ -203,6 +204,12 @@ const stackConfig = {
 	},
 	Qatarflightfis: {
 		screen: Qatarflightfis,
+		navigationOptions: {
+			header: null
+		}
+	},
+	Qatarflightcamera: {
+		screen: Qatarflightcamera,
 		navigationOptions: {
 			header: null
 		}

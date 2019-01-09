@@ -221,6 +221,7 @@ class Qatarflightselected extends Component {
               }}
             >
               <Button
+                onPress={() => this.props.navigation.navigate('Qatarflightcamera')}
                 style={{ backgroundColor: "none" }}
               >
                 <Image
